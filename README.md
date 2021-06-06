@@ -33,7 +33,8 @@ For Laravel:
           $ov->setParams($params);
 
           // Generate the string and set it to your header:
-          $oauth = $ov->sign($httpMethod, $url, $timestamp, $nonce);
-          dd($oauth);
+          $authorization = $ov->sign($httpMethod, $url, $timestamp, $nonce);
+          $val = $ov->validate($authorization, $httpMethod, $url);
+          dd($val);
      }
     }
