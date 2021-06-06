@@ -38,3 +38,11 @@ For Laravel:
           dd($val);
      }
     }
+    
+-Output
+
+      $authorization: "OAuth oauth_consumer_key="TestTest", oauth_nonce="76ba30098c425f9d202b2ef4ebcbc8bbef60fe38", oauth_signature="M9UtVEogXThRnOp4Gx1H3mPnDTQ%3D", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1622958567", oauth_token="%252A%252A%252A%252A%252A%252A", oauth_version="1.0""
+      
+      $val: true
+      
+          
