@@ -488,4 +488,32 @@ class OAuthV1
         }
         return substr($authorization, 0, -2);
     }
+
+    public function url($data)
+    {
+        if (is_array($data)) {
+            return array_map(array(
+                $this,
+                '_url'
+            ), $data);
+        } elseif (is_scalar($data)) {
+            return str_replace(array(
+                '+',
+                '!',
+                '*',
+                "'",
+                '(',
+                ')'
+            ), array(
+                ' ',
+                '%21',
+                '%2A',
+                '%27',
+                '%28',
+                '%29'
+            ), rawurlencode($data));
+        } else {
+            return '';
+        }
+    }
 }
